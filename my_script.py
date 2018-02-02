@@ -2,7 +2,7 @@ import glob
 import json
 files = glob.glob('srv/runme/test*')
 
-destination = '/home/chris/cadong/1BigData/haydaysprint1/something3.txt'
+destination = 'srv/runme/something3.txt'
 
 def json_parser(filename):
    with open(filename, 'r') as f:
