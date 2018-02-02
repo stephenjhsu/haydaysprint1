@@ -1,13 +1,21 @@
-import json
-import sys
 import glob
+import json
+files = glob.glob('srv/runme/test*')
 
-files = glob.glob('srv/runme/'+sys.argv[1]+'*.json')
-destination = 'srv/runme/'+sys.argv[1]
+destination = '/home/chris/cadong/1BigData/haydaysprint1/something3.txt'
+
 def json_parser(filename):
-    with open(filename, 'r') as f:
-        j = json.load(f)
-    return j.get('name')+'\t'+str(j.get('prop').get('age'))
-for filenames in files:
-    with open(destination, 'w') as f:
-        f.write(json_parser(filenames))
+   with open(filename, 'r') as f:
+   
+	j = json.load(f)
+	print j
+	print('got to end')
+	return j.get('name')+' '+str(j.get('prop').get('age'))
+
+print files
+with open(destination, 'w+') as f:
+   for filenames in files:
+		print 'hi'
+		print filenames
+		f.write(json_parser(filenames))
+		# f.write('hi')
