@@ -1,6 +1,6 @@
 import glob
 import json
-files = glob.glob('srv/runme/test*')
+files = glob.glob('srv/runme/c*')
 
 destination = 'srv/runme/something3.txt'
 
