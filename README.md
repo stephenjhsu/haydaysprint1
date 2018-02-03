@@ -1,5 +1,7 @@
 # haydaysprint1
 
+Team Members: David Kes, Chris Dong, Cara Qin, Nicha Ruchirawat, Stephen Hsu
+
 In the sprint 1 project, the goal is to write a Python script which can deploy our code to an AWS server. 
 
 The current Github repo contains the script that we will call from deploy.py to 
