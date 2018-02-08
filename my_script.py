@@ -6,14 +6,24 @@ import sys
 files = glob.glob('/home/testtest/srv/runme/'+sys.argv[1]+'*')
 destination = '/home/testtest/srv/runme/something3.txt'
 
-def json_parser(filename):
+def good_json(filename):
    with open(filename, 'r') as f:
-
-        j = json.load(f)
-        print j
-        print('got to end')
-        return j.get('name')+' '+str(j.get('prop').get('age'))
+       lines = f.read().strip().split('\n')
+       jsons = []
+       for line in lines:
+            if str(line).count('age') == 1 and str(line).count('name') == 1:
+                try:
+                   j = json.loads(str(line))
+                   try:        
+                       if ((j.get('name') != None) and (j.get('name') != '')
+                           and (j.get('prop').get('age') != None) and (j.get('prop').get('age') != '')) and (j.get('prop').get('age') >=0):
+                           jsons.append(j)
+                   except AttributeError:
+                       continue    
+                except ValueError:
+                   continue
+   return jsons
 
 with open(destination, 'w+') as f:
    for filenames in files:
-        f.write(json_parser(filenames))
+        f.write(good_json(filenames))
