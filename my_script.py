@@ -4,7 +4,7 @@ import sys
 
 
 files = glob.glob('/home/testtest/srv/runme/'+sys.argv[1]+'*')
-destination = '/home/testtest/srv/runme/something3.txt'
+destination = '/home/testtest/srv/runme/' + str(sys.argv[1]) + '.txt'
 
 def good_json(filename):
    with open(filename, 'r') as f:
