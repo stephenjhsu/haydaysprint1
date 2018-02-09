@@ -23,9 +23,9 @@ def good_json(filename):
                 except ValueError:
                    continue
    return jsons
+
 with open(destination, 'w+') as f:
    for filenames in files:
       json_list = good_json(filenames)
       for blob in json_list:
-         f.write(blob.get('name')+'\t'+blob.get('prop').get('age'))      
-f.close()
+         f.write(blob.get('name')+'\t'+str(blob.get('prop').get('age'))+'\n') 
