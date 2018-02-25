@@ -1,6 +1,6 @@
 from flask import Flask, abort, request 
 from flask import render_template # finds and renders files under */templates/
-import deploy_sprint2
+from deploy_sprint2 import prefix
 
 # Initialization 
 # Create an application instance (an object of class Flask)  which handles all requests.
@@ -39,10 +39,6 @@ if not os.path.exists('/home/testtest/srv/runme/%s/proc.txt' % prefix):
 
 if not os.path.exists('/home/testtest/srv/runme/%s/Raw.txt' % prefix):
 	open('/home/testtest/srv/runme/%s/Raw.txt' % prefix, 'w').close()
-# dir = os.path.dirname(prefix)
-
-# if not os.path.exists(dir):
-# 	os.makedirs(dir)
 
 @application.route('/foo', methods=['POST']) 
 def foo():
