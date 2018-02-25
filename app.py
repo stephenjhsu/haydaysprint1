@@ -49,7 +49,7 @@ def foo():
 
 json_list = good_json('Raw.txt')
 with open('proc.txt', 'w') as f2:
-	# f2.write('hello')
+	
 	for blob in json_list:
 		f2.write(blob.get('name')+'\t'+str(blob.get('prop').get('age'))+'\n') 
 
