@@ -36,7 +36,7 @@ if not os.path.exists('proc.txt'):
 if not os.path.exists('Raw.txt'):
 	open('Raw.txt', 'w').close()
 
-@application.route('/foo', methods=['POST']) 
+@application.route('/foo') 
 def foo():
 	with open('Raw.txt', 'w') as f:
 		f.write(request.data)
