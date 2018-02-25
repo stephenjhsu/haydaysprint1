@@ -42,8 +42,10 @@ if not os.path.exists('/home/testtest/srv/runme/%s/proc.txt' % prefix):
 if not os.path.exists('/home/testtest/srv/runme/%s/Raw.txt' % prefix):
 	open('/home/testtest/srv/runme/%s/Raw.txt' % prefix, 'w').close()
 
-with open('/home/testtest/srv/runme/cookie/fdsfdsf.txt', 'w') as f5:
+with open('testing.txt', 'w') as f5:
 	f5.write('test')
+
+
 
 @application.route('/foo', methods=['POST']) 
 def foo():
