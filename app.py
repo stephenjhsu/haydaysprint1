@@ -40,8 +40,9 @@ if not os.path.exists('proc.txt'):
 if not os.path.exists('Raw.txt'):
 	open('Raw.txt', 'w').close()
 
-if not os.path.exists(prefix):
-	open(prefix, 'w').close()
+dir = os.path.dirname(prefix)
+	if not os.path.exists(dir):
+		os.makedirs(dir)
 
 @application.route('/foo', methods=['POST', 'GET']) 
 def foo():
