@@ -42,8 +42,7 @@ if not os.path.exists('/home/testtest/srv/runme/%s/proc.txt' % prefix):
 if not os.path.exists('/home/testtest/srv/runme/%s/Raw.txt' % prefix):
 	open('/home/testtest/srv/runme/%s/Raw.txt' % prefix, 'w').close()
 
-with open('testing.txt', 'w') as f5:
-	f5.write('test')
+
 
 
 
@@ -62,5 +61,7 @@ with open('/home/testtest/srv/runme/%s/proc.txt' % prefix, 'w') as f2:
 
 
 if __name__ == '__main__':
+	with open('testing.txt', 'w') as f5:
+		f5.write('test')
     #Ensure that the development web server is started only when the script is executed directly.
 	application.run(host="localhost",port=8080,debug=True)
