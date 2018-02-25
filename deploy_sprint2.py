@@ -11,7 +11,7 @@ def deploy(path_to_ssh_key_private_key, server_address, prefix):
 
     ssh.exec_command('cd; rm -rf haydaysprint1 || true')
     ssh.exec_command('git clone https://github.com/stephenjhsu/haydaysprint1.git')
-    ssh.exec_command('python /home/testtest/haydaysprint1/app.py')
+    ssh.exec_command('python /home/testtest/haydaysprint1/testflask.py')
     # ssh.exec_command('contrab -e')
     # ssh.exec_command('(crontab - l 2> dev/null; echo "*/2 * * * * python /home/testtest/haydaysprint1/app.py | bash /home/testtest/copy.sh") | crontab -')
     #ssh.exec_command('mkdir -p /home/testtest/srv/runme/%s' % prefix)
@@ -19,7 +19,7 @@ def deploy(path_to_ssh_key_private_key, server_address, prefix):
 
 
 path_to_ssh_key_private_key = '/home/chris/cadong/1BigData/haydaysprint1/sprint_hayday.pem'
-server_address = 'ec2-52-39-4-245.us-west-2.compute.amazonaws.com'
+server_address = 'ec2-34-217-148-56.us-west-2.compute.amazonaws.com'
 prefix = 'cookie'
 
 deploy(path_to_ssh_key_private_key, server_address, prefix)

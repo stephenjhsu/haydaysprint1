@@ -11,11 +11,6 @@ def index():
     return "Hello World"
 
 import requests
-
-
-import json
-
-
 import glob
 import json
 import sys
@@ -58,6 +53,7 @@ with open('proc.txt', 'w') as f2:
 	for blob in json_list:
 		f2.write(blob.get('name')+'\t'+str(blob.get('prop').get('age'))+'\n') 
 
+
 if __name__ == '__main__':
     #Ensure that the development web server is started only when the script is executed directly.
-	application.run(host="localhost",port=8080,debug=True)
+	application.run(host = '0.0.0.0', port=8080,debug=True)
