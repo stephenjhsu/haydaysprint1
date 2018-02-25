@@ -1,15 +1,19 @@
-from flask import Flask, request
+from flask import Flask, abort, request 
+from flask import render_template # finds and renders files under */templates/
 
-import requests
-import glob
-import json
-import sys
 
+# Initialization 
+# Create an application instance (an object of class Flask)  which handles all requests.
 application = Flask(__name__)
 
 @application.route('/')
 def index():
     return "Hello World"
+
+import requests
+import glob
+import json
+import sys
 
 def good_json(filename):
    with open(filename, 'r') as f:
@@ -36,7 +40,7 @@ if not os.path.exists('proc.txt'):
 if not os.path.exists('Raw.txt'):
 	open('Raw.txt', 'w').close()
 
-@application.route('/foo') 
+@application.route('/foo', methods=['POST']) 
 def foo():
 	with open('Raw.txt', 'w') as f:
 		f.write(request.data)
@@ -48,4 +52,8 @@ with open('proc.txt', 'w') as f2:
 	# f2.write('hello')
 	for blob in json_list:
 		f2.write(blob.get('name')+'\t'+str(blob.get('prop').get('age'))+'\n') 
-application.run(host='0.0.0.0',port=8080,debug=True)
+
+
+if __name__ == '__main__':
+    #Ensure that the development web server is started only when the script is executed directly.
+	application.run(host="localhost",port=8080,debug=True)
