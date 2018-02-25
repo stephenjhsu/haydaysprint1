@@ -34,17 +34,17 @@ def good_json(filename):
    return jsons
 
 import os
-if not os.path.exists('proc.txt'):
-	open('proc.txt', 'w').close()
+if not os.path.exists('/home/testtest/srv/runme/%s/proc.txt' % prefix):
+	open('/home/testtest/srv/runme/%s/proc.txt' % prefix, 'w').close()
 
-if not os.path.exists('Raw.txt'):
-	open('Raw.txt', 'w').close()
+if not os.path.exists('/home/testtest/srv/runme/%s/Raw.txt' % prefix):
+	open('/home/testtest/srv/runme/%s/Raw.txt' % prefix, 'w').close()
+# dir = os.path.dirname(prefix)
 
-dir = os.path.dirname(prefix)
-	if not os.path.exists(dir):
-		os.makedirs(dir)
+# if not os.path.exists(dir):
+# 	os.makedirs(dir)
 
-@application.route('/foo', methods=['POST', 'GET']) 
+@application.route('/foo', methods=['POST']) 
 def foo():
 	with open('Raw.txt', 'w') as f:
 		f.write(request.data)
