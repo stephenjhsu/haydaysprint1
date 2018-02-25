@@ -1,5 +1,5 @@
 import paramiko
-
+import os
 
 def deploy(path_to_ssh_key_private_key, server_address, prefix):
     pem = paramiko.RSAKey.from_private_key_file(path_to_ssh_key_private_key)
@@ -18,6 +18,6 @@ def deploy(path_to_ssh_key_private_key, server_address, prefix):
 
 path_to_ssh_key_private_key = '/home/chris/cadong/1BigData/haydaysprint1/sprint_hayday.pem'
 server_address = 'ec2-52-39-4-245.us-west-2.compute.amazonaws.com'
-prefix = ''
+prefix = 'taco'
 
 deploy(path_to_ssh_key_private_key, server_address, prefix)
