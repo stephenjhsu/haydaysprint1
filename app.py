@@ -35,7 +35,7 @@ def good_json(filename):
 
 import os
 
-with open('srv/runme/cook/Raw.txt', 'w') as fa:
+with open('../srv/runme/cook/Raw.txt', 'w') as fa:
 	fa.write('hi')
 
 @application.route('/foo', methods=['POST']) 
