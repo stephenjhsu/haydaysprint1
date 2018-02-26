@@ -39,8 +39,8 @@ import os
 
 
 # filename = '/srv/runme/' + prefix + '/Raw.txt' 
-filename = "hi"
-with open(filename, 'w') as fa:
+filename = "testing.txt"
+with open(filename, 'a+') as fa:
     fa.write('hi')
 
 
