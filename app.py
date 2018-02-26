@@ -49,15 +49,15 @@ import os
 @application.route('/foo', methods=['POST']) 
 def foo():
     	with open('./srv/runme/' + prefix + '/Raw.txt', 'w') as f:
-		f.write(request.data)
+            f.write(request.data)
 		# f.write('hi')
+        json_list = good_json('./srv/runme/' + prefix + '/Raw.txt')
+        with open('./srv/runme/' + prefix + '/proc.txt', 'w') as f2:
+            for blob in json_list:
+                f2.write(blob.get('name')+'\t'+str(blob.get('prop').get('age'))+'\n') 
 
 		return "Succesfully received"
 
-json_list = good_json('./srv/runme/' + prefix + '/Raw.txt')
-with open('./srv/runme/' + prefix + '/proc.txt', 'w') as f2:
-    for blob in json_list:
-    	f2.write(blob.get('name')+'\t'+str(blob.get('prop').get('age'))+'\n') 
 
 
 
