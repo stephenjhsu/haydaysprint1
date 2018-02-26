@@ -6,9 +6,7 @@ prefix = 'cccc'
 # Create an application instance (an object of class Flask)  which handles all requests.
 application = Flask(__name__)
 
-@application.route('/')
-def index():
-    return "Hello World"
+
 
 import requests
 import glob
@@ -46,8 +44,8 @@ import os
 
 
 
-@application.route('/foo', methods=['POST']) 
-def foo():
+@application.route('/', methods=['POST']) 
+def get_request():
     	with open('./srv/runme/' + prefix + '/Raw.txt', 'w') as f:
             f.write(request.data)
 		# f.write('hi')
