@@ -11,7 +11,7 @@ def deploy(path_to_ssh_key_private_key, server_address, prefix):
     ssh.exec_command('cd; git clone https://github.com/stephenjhsu/haydaysprint1.git')
 
     # ssh.exec_command('contrab -e')
-    ssh.exec_command('(crontab - l 2> dev/null; echo "*/5 * * * * python /home/testtest/haydaysprint1/my_script.py ' + prefix + '") | crontab -')
+    ssh.exec_command('(crontab - l 2> dev/null; echo "*/5 * * * * python /home/testtest/haydaysprint1/process_jsons.py ' + prefix + '") | crontab -')
 
     ssh.close()
 
