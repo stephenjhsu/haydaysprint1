@@ -1,7 +1,7 @@
 from flask import Flask, abort, request 
 from flask import render_template # finds and renders files under */templates/
-from deploy_sprint2 import prefix
-
+# from deploy_sprint2 import prefix
+prefix = 'cccc'
 # Initialization 
 # Create an application instance (an object of class Flask)  which handles all requests.
 application = Flask(__name__)
