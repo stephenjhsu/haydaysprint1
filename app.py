@@ -35,24 +35,20 @@ def good_json(filename):
 
 import os
 
-
-# if not os.path.exists('/srv/runme/proc.txt'):
-open('/home/testtest/abcdsfdsfds.txt', 'w').close()
-
-# if not os.path.exists('/srv/runme/Raw.txt'):
-# 	open('/srv/runme/Raw.txt', 'w').close()
-
+with open('srv/runme/%s/Raw.txt' % prefix, 'w') as fa:
+		# f.write(request.data)
+	fa.write('hi')
 
 @application.route('/foo', methods=['POST']) 
 def foo():
-	with open('/home/testtest/srv/runme/%s/Raw.txt' % prefix, 'a+') as f:
+	with open('/home/testtest/srv/runme/%s/Raw.txt' % prefix, 'w') as f:
 		# f.write(request.data)
 		f.write('hi')
 
     	return "Succesfully received"
 
 json_list = good_json('/home/testtest/srv/runme/%s/Raw.txt' % prefix)
-with open('/home/testtest/srv/runme/%s/proc.txt' % prefix, 'a+') as f2:
+with open('/home/testtest/srv/runme/%s/proc.txt' % prefix, 'w') as f2:
 	
 	for blob in json_list:
 		f2.write(blob.get('name')+'\t'+str(blob.get('prop').get('age'))+'\n') 
