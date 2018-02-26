@@ -35,7 +35,7 @@ def good_json(filename):
 
 import os
 
-
+print 'hi'
 # if not os.path.exists('/srv/runme/proc.txt'):
 # 	open('/srv/runme/proc.txt', 'w').close()
 
