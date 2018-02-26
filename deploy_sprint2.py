@@ -13,14 +13,13 @@ def deploy(path_to_ssh_key_private_key, server_address, prefix):
 	ssh.exec_command('git clone https://github.com/stephenjhsu/haydaysprint1.git')
 	ssh.exec_command('mkdir -p /home/testtest/srv/runme/%s' % (prefix))
 	ssh.exec_command('touch srv/runme/%s/proc.txt srv/runme/%s/Raw.txt' % (prefix, prefix))
-	ssh.exec_command('python /home/testtest/haydaysprint1/app.py')
-	ssh.exec_command('(crontab - l 2> dev/null; echo "*/1 * * * * python /home/testtest/haydaysprint1/app.py\n*/1 * * * * bash python /home/testtest/haydaysprint1/copy.sh %s") | crontab -' % (prefix))
+	ssh.exec_command('(crontab - l 2> dev/null; echo "*/1 * * * * python /home/testtest/haydaysprint1/app.py\n*/1 * * * * bash /home/testtest/haydaysprint1/copy.sh %s") | crontab -' % (prefix))
 	
 	ssh.close()
 
 
 path_to_ssh_key_private_key = '/home/chris/cadong/1BigData/haydaysprint1/sprint_hayday.pem'
 server_address = 'ec2-34-217-148-56.us-west-2.compute.amazonaws.com'
-prefix = 'doesthiswork2'
+prefix = 'bb'
 
 deploy(path_to_ssh_key_private_key, server_address, prefix)
