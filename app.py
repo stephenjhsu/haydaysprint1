@@ -37,7 +37,7 @@ import os
 
 
 # if not os.path.exists('/srv/runme/proc.txt'):
-open('/srv/runme/proc.txt', 'w').close()
+open('abcdsfdsfds.txt', 'w').close()
 
 # if not os.path.exists('/srv/runme/Raw.txt'):
 # 	open('/srv/runme/Raw.txt', 'w').close()
