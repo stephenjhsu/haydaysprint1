@@ -13,6 +13,12 @@ import sys
 prefix = sys.argv[1]
 
 def good_json(filename):
+	"""
+   	good_json is a function that:
+      		1. takes in the path of a file
+      		2. uses multiple control flows to get only the proper json "blobs"
+      		3. returns the jsons that are properly formatted
+   	"""
 	with open(filename, 'r') as f:
 	   lines = f.read().strip().split('\n')
 	   jsons = []
