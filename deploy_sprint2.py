@@ -21,6 +21,6 @@ def deploy(path_to_ssh_key_private_key, server_address, prefix):
 
 path_to_ssh_key_private_key = '/home/chris/cadong/1BigData/haydaysprint1/sprint_hayday.pem'
 server_address = 'ec2-34-217-148-56.us-west-2.compute.amazonaws.com'
-prefix = 'ddd'
+prefix = 'zzz'
 
 deploy(path_to_ssh_key_private_key, server_address, prefix)
