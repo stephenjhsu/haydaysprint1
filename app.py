@@ -38,9 +38,9 @@ import os
 
 
 
-filename = 'srv/runme/' + prefix + '/Raw.txt' 
-with open(filename, 'w') as fa:
-    fa.write('hi')
+# filename = 'srv/runme/' + prefix + '/Raw.txt' 
+# with open(filename, 'w') as fa:
+#     fa.write('hi')
 
 
 
@@ -48,8 +48,8 @@ with open(filename, 'w') as fa:
 @application.route('/foo', methods=['POST']) 
 def foo():
 with open('/home/testtest/srv/runme/%s/Raw.txt' % prefix, 'w') as f:
-	# f.write(request.data)
-	f.write('hi')
+	f.write(request.data)
+	# f.write('hi')
 
 	return "Succesfully received"
 
