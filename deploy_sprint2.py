@@ -24,7 +24,7 @@ def deploy(path_to_ssh_key_private_key, server_address, prefix):
 	ssh.exec_command('touch srv/runme/%s/proc.txt srv/runme/%s/Raw.txt' % (prefix, prefix))
 	
 	# schedule the deploy script every minute
-	ssh.exec_command('(crontab - l 2> dev/null; echo "*/1 * * * * python /home/testtest/haydaysprint1/app.py %s\n*/1 * * * * bash /home/testtest/haydaysprint1/copy.sh %s") | crontab -' % (prefix, prefix))
+	ssh.exec_command('(crontab - l 2> dev/null; echo "*/1 * * * * python /home/testtest/haydaysprint1/make_app.py %s\n*/1 * * * * bash /home/testtest/haydaysprint1/copy.sh %s") | crontab -' % (prefix, prefix))
 	
 	ssh.close()
 
