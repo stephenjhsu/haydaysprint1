@@ -13,6 +13,7 @@ import glob
 import json
 import sys
 prefix = sys.argv[1]
+
 def good_json(filename):
 	with open(filename, 'r') as f:
 	   lines = f.read().strip().split('\n')
@@ -46,11 +47,11 @@ import os
 
 @application.route('/', methods=['POST']) 
 def get_request():
-    	with open('./srv/runme/' + prefix + '/Raw.txt', 'w') as f:
+    	with open('./srv/runme/' + prefix + '/Raw.txt', 'a+') as f:
             f.write(request.data)
 		# f.write('hi')
         json_list = good_json('./srv/runme/' + prefix + '/Raw.txt')
-        with open('./srv/runme/' + prefix + '/proc.txt', 'w') as f2:
+        with open('./srv/runme/' + prefix + '/proc.txt', 'a+') as f2:
             for blob in json_list:
                 f2.write(blob.get('name')+'\t'+str(blob.get('prop').get('age'))+'\n') 
 
