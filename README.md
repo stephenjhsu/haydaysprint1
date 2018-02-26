@@ -17,3 +17,8 @@ The current Github repo contains the script that we will call from deploy.py to
 In the Sprint 2 project, the goal is to build a web interface that will receive and process JSON objects. 
 
 The modified files include: 
+  app.py - Creates an application instance (an object of class Flask)  which handles all POST requests
+  deploy_sprint2.py - Deploys the correct files into an EC2 instance
+  my_script.py - Processes the JSON inputs and writes them to specific files
+  
+  Note: deploy.py is left on from Sprint 1 but is not used in Sprint 2
