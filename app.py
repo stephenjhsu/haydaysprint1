@@ -1,6 +1,6 @@
 from flask import Flask, abort, request 
 from flask import render_template # finds and renders files under */templates/
-from deploy_sprint2 import prefix
+# from deploy_sprint2 import prefix
 
 # Initialization 
 # Create an application instance (an object of class Flask)  which handles all requests.
@@ -12,7 +12,7 @@ import requests
 import glob
 import json
 import sys
-
+prefix = sys.argv[1]
 def good_json(filename):
 	with open(filename, 'r') as f:
 	   lines = f.read().strip().split('\n')
