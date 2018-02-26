@@ -35,9 +35,9 @@ def good_json(filename):
 
 import os
 
-filename = 'srv/runme/doesthiswork2/Raw.txt'
-with open(filename, 'w') as fa:
-  fa.write('hi')
+# filename = 'srv/runme/doesthiswork2/Raw.txt'
+# with open(filename, 'w') as fa:
+#   fa.write('hi')
 
 @application.route('/foo', methods=['POST']) 
 def foo():
