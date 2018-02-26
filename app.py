@@ -63,4 +63,4 @@ with open('./srv/runme/' + prefix + '/proc.txt', 'w') as f2:
 
 
 #Ensure that the development web server is started only when the script is executed directly.
-application.run(host="localhost",port=8080,debug=True)
+application.run(host="0.0.0.0",port=8080,debug=True)
