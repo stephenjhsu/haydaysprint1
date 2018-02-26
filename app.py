@@ -36,20 +36,11 @@ import os
 
 
 
-
-# filename = './srv/runme/' + prefix + '/Raw.txt' 
-# # filename = "/home/testtest/testing.txt"
-# with open(filename, 'a+') as fa:
-#     fa.write('fdsfds')
-
-
-
-
 @application.route('/', methods=['POST']) 
 def get_request():
     	with open('./srv/runme/' + prefix + '/Raw.txt', 'a+') as f:
             f.write(request.data)
-		# f.write('hi')
+		
         json_list = good_json('./srv/runme/' + prefix + '/Raw.txt')
         with open('./srv/runme/' + prefix + '/proc.txt', 'a+') as f2:
             for blob in json_list:
@@ -62,4 +53,5 @@ def get_request():
 
 
 #Ensure that the development web server is started only when the script is executed directly.
-application.run(host="0.0.0.0",port=8080,debug=True)
+if __name__ == '__main__':
+    application.run(host="0.0.0.0",port=8080,debug=True)
