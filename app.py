@@ -32,6 +32,14 @@ def good_json(filename):
 
 @application.route('/', methods=['POST']) 
 def get_request():
+	"""
+	get_request is a function that 
+		1. receives data from POST request
+		2. Opens the 'Raw.txt' at the prefix location
+		3. writes the POST request data into the file name
+		4. Process the file for the well-formatted JSON blobs
+		5. Places those into the 'proc.txt' 
+	"""
     	with open('./srv/runme/' + prefix + '/Raw.txt', 'a+') as f:
             f.write(request.data)
 		
@@ -41,10 +49,6 @@ def get_request():
                 f2.write(blob.get('name')+'\t'+str(blob.get('prop').get('age'))+'\n') 
 
 		return "Succesfully received"
-
-
-
-
 
 #Ensure that the development web server is started only when the script is executed directly.
 if __name__ == '__main__':
