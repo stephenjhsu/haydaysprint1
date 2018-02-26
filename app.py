@@ -39,7 +39,7 @@ import os
 
 
 # filename = '/srv/runme/' + prefix + '/Raw.txt' 
-filename = "testing.txt"
+filename = "/home/testtest/testing.txt"
 with open(filename, 'a+') as fa:
     fa.write('hi')
 
