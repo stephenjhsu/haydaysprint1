@@ -36,17 +36,12 @@ def good_json(filename):
 import os
 
 
-# if not os.path.exists('/home/testtest/srv/runme/%s/proc.txt' % prefix):
-# 	open('/home/testtest/srv/runme/%s/proc.txt' % prefix, 'w').close()
+if not os.path.exists('srv/runme/%s/proc.txt' % prefix):
+	open('srv/runme/%s/proc.txt' % prefix, 'w').close()
 
-# if not os.path.exists('/home/testtest/srv/runme/%s/Raw.txt' % prefix):
-# 	open('/home/testtest/srv/runme/%s/Raw.txt' % prefix, 'w').close()
+if not os.path.exists('srv/runme/%s/Raw.txt' % prefix):
+	open('srv/runme/%s/Raw.txt' % prefix, 'w').close()
 
-
-
-
-with open('/home/testtest/testing.txt', 'w') as f5:
-	f5.write('test')
 
 @application.route('/foo', methods=['POST']) 
 def foo():
