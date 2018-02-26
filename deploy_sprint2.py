@@ -2,6 +2,13 @@ import paramiko
 import os
 
 def deploy(path_to_ssh_key_private_key, server_address, prefix):
+	"""
+	deploy is a function that takes in
+		1. path to the pem file
+		2. a server address of the EC2 instance
+		3. a prefix to read and write json blobs into
+	and uses those inputs to create a working instance to read in jsons on an EC2 instance
+	"""
 	# connecting to EC2 instance under username 'testtest'
 	pem = paramiko.RSAKey.from_private_key_file(path_to_ssh_key_private_key)
 	ssh = paramiko.SSHClient()
