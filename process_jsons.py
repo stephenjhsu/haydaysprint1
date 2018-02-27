@@ -3,8 +3,8 @@ import json
 import sys
 
 #initialize the files and the destination to put in the well-formatted jsons
-files = glob.glob('/home/testtest/srv/runme/'+sys.argv[1]+'*')
-destination = '/home/testtest/srv/runme/' + str(sys.argv[1]) + '.txt'
+files = glob.glob('/srv/runme/'+sys.argv[1]+'*')
+destination = '/srv/runme/' + str(sys.argv[1]) + '.txt'
 
 def good_json(filename):
    """
